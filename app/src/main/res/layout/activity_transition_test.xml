@@ -7,11 +7,10 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/main_image_view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
         android:contentDescription="@null"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_launcher_background"
         android:transitionName="mainImageTransition"
         app:layout_constraintTop_toTopOf="parent" />
