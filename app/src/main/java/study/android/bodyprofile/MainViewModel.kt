@@ -16,12 +16,9 @@ class MainViewModel: ViewModel(){
 
     fun test() {
         viewModelScope.launch {
-            // TODO  get error :
-            //  java.lang.IllegalArgumentException: Unable to create call adapter for class java.lang.Object
-            //  for method NaverAPI.getSearchNews
-            naverRetrofitManager.testNews()
+            newsResponse.value = naverRetrofitManager.testNews()
             delay(1000)
-            naverRetrofitManager.testPapago()
+            // papagoResponse.value = naverRetrofitManager.testPapago()
         }
     }
 }
