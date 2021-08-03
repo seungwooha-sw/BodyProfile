@@ -10,8 +10,8 @@ import androidx.core.app.ActivityOptionsCompat
 import android.util.Pair as UtilPair
 
 class MainActivity : AppCompatActivity() {
-    val mainImageView: ImageView by lazy { findViewById<ImageView>(R.id.main_image_view) }
-    val subImageView: ImageView by lazy { findViewById<ImageView>(R.id.sub_image_view) }
+    private val mainImageView: ImageView by lazy { findViewById(R.id.main_image_view) }
+    private val subImageView: ImageView by lazy { findViewById(R.id.sub_image_view) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
