@@ -1,9 +1,6 @@
 package study.android.bodyprofile
 
 import android.os.Bundle
-import android.widget.TextView
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -48,10 +45,6 @@ class MainActivity : ComponentActivity() {
         )
 
         viewModel.test()
-
-        viewModel.newsResponse.observe(this, Observer {
-            findViewById<TextView>(R.id.text_view).text = it.toString()
-        })
     }
 
     @Preview
@@ -106,6 +99,12 @@ class MainActivity : ComponentActivity() {
                     }
                 )
             }
+
+            val newsResponse by viewModel.newsResponse.observeAsState("")
+            Text(
+                text = newsResponse.toString(),
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
         }
     }
 
