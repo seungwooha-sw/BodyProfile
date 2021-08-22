@@ -43,6 +43,8 @@ class MainActivity : ComponentActivity() {
         viewModel.setMemo(
             resources.getStringArray(R.array.memo).toList()
         )
+
+        viewModel.test()
     }
 
     @Preview
@@ -97,6 +99,12 @@ class MainActivity : ComponentActivity() {
                     }
                 )
             }
+
+            val newsResponse by viewModel.newsResponse.observeAsState("")
+            Text(
+                text = newsResponse.toString(),
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
         }
     }
 
